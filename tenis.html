@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Encontre bons tênis de marcas conhecidas e compare preços.">
+  <title>PassoCerto | Encontre seu próximo tênis</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styletenis.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="PassoCerto início"><span class="brand-mark">P</span> passo<span>certo</span></a>
+    <nav class="desktop-nav">
+      <a href="#categorias">Categorias</a>
+      <a href="#ofertas">Ofertas</a>
+      <a href="#sobre">Como funciona</a>
+    </nav>
+    <a class="header-cta" href="#ofertas">Encontrar tênis <span>↗</span></a>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="pulse"></span> ESCOLHAS INTELIGENTES, PASSOS MELHORES</div>
+        <h1>Seu próximo tênis.<br><em>Sem pagar mais.</em></h1>
+        <p>Descubra modelos de marcas que você gosta, compare opções e encontre um bom preço para cada ocasião.</p>
+        <a class="primary-btn" href="#categorias">Explorar categorias <span>→</span></a>
+        <div class="hero-note"><span>✓</span> Você compra diretamente na loja vendedora</div>
+      </div>
+      <div class="hero-art">
+        <div class="hero-orbit orbit-one"></div><div class="hero-orbit orbit-two"></div>
+        <div class="hero-tag tag-top">ESTILO + CONFORTO</div>
+        <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1000&q=85" alt="Tênis esportivo vermelho">
+        <div class="hero-tag tag-bottom"><strong>01</strong> encontre seu par</div>
+      </div>
+    </section>
+
+    <section class="category-section section-wrap" id="categorias">
+      <div class="section-heading">
+        <div><div class="eyebrow">ENCONTRE O SEU ESTILO</div><h2>O que você procura?</h2></div>
+        <p>Escolha uma categoria<br>para começar.</p>
+      </div>
+      <div class="category-grid" id="categoryGrid">
+        <button class="category-card active" data-category="Todos"><span class="category-icon">✳</span><span>Todos</span><small>Ver tudo</small></button>
+        <button class="category-card" data-category="Sports"><span class="category-icon">◉</span><span>Sports</span><small>Estilo esportivo</small></button>
+        <button class="category-card" data-category="Casual"><span class="category-icon">▱</span><span>Casual</span><small>Para combinar</small></button>
+        <button class="category-card" data-category="Social"><span class="category-icon">◇</span><span>Social</span><small>Visual elegante</small></button>
+        <button class="category-card" data-category="Corrida"><span class="category-icon">↗</span><span>Corrida</span><small>Para se movimentar</small></button>
+        <button class="category-card" data-category="Dia a dia"><span class="category-icon">⌂</span><span>Dia a dia</span><small>Conforto diário</small></button>
+      </div>
+    </section>
+
+    <section class="products-section section-wrap" id="ofertas">
+      <div class="section-heading product-heading">
+        <div><div class="eyebrow">SELEÇÃO PASSOCERTO</div><h2 id="productsTitle">Tênis em destaque</h2><p class="section-subtitle">Modelos para diferentes estilos e bolsos.</p></div>
+        <label class="sort-control">Ordenar por
+          <select id="sortSelect"><option value="recommended">Recomendados</option><option value="low">Menor preço</option><option value="high">Maior preço</option></select>
+        </label>
+      </div>
+      <div class="toolbar">
+        <label class="search-box"><span>⌕</span><input id="searchInput" type="search" placeholder="Buscar marca ou modelo..."></label>
+        <span class="result-count" id="resultCount"></span>
+      </div>
+      <div class="product-grid" id="productGrid"></div>
+      <div class="empty-state" id="emptyState" hidden>Nenhum tênis encontrado. Tente outra busca ou categoria.</div>
+      <p class="demo-notice">Preços e produtos exibidos nesta versão são exemplos demonstrativos. Confirme o valor e a disponibilidade na loja antes de comprar.</p>
+    </section>
+
+    <section class="how-section" id="sobre">
+      <div class="section-wrap how-inner">
+        <div><div class="eyebrow">SIMPLES ASSIM</div><h2>Comprar bem<br>fica mais fácil.</h2></div>
+        <div class="steps">
+          <div class="step"><b>01</b><div><strong>Escolha uma categoria</strong><p>Encontre opções para seu estilo e necessidade.</p></div></div>
+          <div class="step"><b>02</b><div><strong>Compare os detalhes</strong><p>Veja características e preço de cada modelo.</p></div></div>
+          <div class="step"><b>03</b><div><strong>Compre na loja</strong><p>Você será direcionado ao site do vendedor.</p></div></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer><a class="brand" href="#"><span class="brand-mark">P</span> passo<span>certo</span></a><p>Encontre seu próximo passo.</p><small>© 2026 PassoCerto. Preços sujeitos a alteração nas lojas.</small></footer>
+
+  <div class="modal-backdrop" id="modalBackdrop" hidden>
+    <article class="product-modal" role="dialog" aria-modal="true" aria-labelledby="modalName">
+      <button class="modal-close" id="modalClose" aria-label="Fechar">×</button>
+      <div class="modal-image"><img id="modalImage" src="" alt=""></div>
+      <div class="modal-info">
+        <div class="eyebrow" id="modalCategory"></div>
+        <div class="modal-brand" id="modalBrand"></div>
+        <h2 id="modalName"></h2>
+        <p id="modalDescription"></p>
+        <h3>Características</h3>
+        <ul id="modalSpecs"></ul>
+        <div class="modal-price-label">PREÇO DE REFERÊNCIA</div>
+        <div class="modal-price" id="modalPrice"></div>
+        <small class="modal-disclaimer">Preço demonstrativo. Confira o preço final, frete e estoque no site da loja.</small>
+        <a class="primary-btn buy-btn" id="buyButton" href="#" target="_blank" rel="noopener noreferrer">Ir para a loja <span>↗</span></a>
+      </div>
+    </article>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

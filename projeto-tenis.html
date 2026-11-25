@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Passo Certo | GraVit Tech – Projetos</title>
+  <meta name="description" content="Uma loja fictícia criada por nós para demonstrar como fica um site de vendas.">
+  <meta name="theme-color" content="#4338ca">
+  <meta property="og:title" content="Passo Certo | GraVit Tech">
+  <meta property="og:description" content="Uma loja fictícia criada por nós para demonstrar como fica um site de vendas.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="img/logo-gravit.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo principal</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="index.html">
+        <img class="logo-img" src="img/logo-gravit.svg" alt="" width="40" height="40">
+        GraVit Tech
+      </a>
+
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu-principal">
+        <span aria-hidden="true">☰</span> Menu
+      </button>
+
+      <nav aria-label="Principal">
+        <ul id="menu-principal" class="menu" role="list">
+          <li><a href="index.html">Início</a></li>
+          <li><a href="servicos.html">Serviços</a></li>
+          <li><a href="projetos.html" aria-current="true">Projetos</a></li>
+          <li><a href="sobre.html">Sobre</a></li>
+          <li><a href="contato.html">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo" tabindex="-1">
+
+    <section class="topo-pagina" aria-labelledby="titulo-pagina">
+      <div class="container">
+        <nav class="migalhas" aria-label="Você está em">
+          <ol>
+            <li><a href="projetos.html">Projetos</a></li>
+            <li aria-current="page">Passo Certo</li>
+          </ol>
+        </nav>
+        <span class="tag">Site</span>
+        <h1 id="titulo-pagina">Passo Certo</h1>
+        <p class="lead">Uma loja fictícia criada por nós para demonstrar como fica um site de melhores preços de tênis no mercado.</p>
+      </div>
+    </section>
+
+    <section class="secao" aria-labelledby="titulo-sobre">
+      <div class="container projeto-topo">
+        <div>
+          <h2 id="titulo-sobre">Sobre o projeto</h2>
+          <p>O Passo Certo é um site (protótipo) de uma loja de tênis fictícia criada pela GraVit Tech, com o foco em melhores e mais baratos tênis
+            de diversas categorias, com visual moderno e funcionando bem no celular. Além de poder fazer e-commerce 
+          podemos fazer um site de catálogos como este ou da sua preferência.</p>
+          <p>O site foi pensado com acessibilidade: dá para navegar só com o teclado, os contrastes seguem as boas práticas e os leitores de tela anunciam o que acontece na página.</p>
+          <h3>Principais recursos</h3>
+          <ul class="lista-check" role="list">
+            <li>Vitrine de produtos com filtros por categoria</li>
+            <li>Botão de ir ao site oficial para realizar a compra</li>
+            <li>Layout responsivo para celular e computador</li>
+            <li>Acessível por teclado e leitor de tela</li>
+          </ul>
+        </div>
+        <aside class="painel-link" aria-labelledby="titulo-teste">
+          <h2 id="titulo-teste">Especificações e demonstração do projeto</h2>
+          <p>Navegue pelo site (lembrando que, é um site de demonstração, podendo ser criado
+            para o seu estabelecimento um completo do seu jeito).</p>
+          <a class="btn" href="loja-tenis/tenis.html" target="_blank" rel="noopener">Visitar a loja de demonstração<span class="sr-only"> (abre em uma nova aba)</span></a>
+          <dl>
+            <dt>Tipo</dt><dd>Site de melhores preços de tênis (demonstração)</dd>
+            <dt>Tecnologias</dt><dd>HTML e CSS (front-end estático)</dd>
+          </dl>
+        </aside>
+      </div>
+    </section>
+
+    <section class="secao secao-alt" aria-labelledby="titulo-imagens">
+      <div class="container">
+        <div class="cabecalho-secao"><h2 id="titulo-imagens">Imagens da interface</h2></div>
+        <ul class="galeria" role="list">
+          <li><figure><img src="img/tenis-1.jpg" alt="Tela 1 da interface do projeto Passo Certo" width="1200" height="800" loading="lazy"><figcaption>Interface do Passo Certo – tela 1</figcaption></figure></li>
+          <li><figure><img src="img/tenis-2.jpg" alt="Tela 2 da interface do projeto Passo Certo" width="1200" height="800" loading="lazy"><figcaption>Interface do Passo Certo – tela 2</figcaption></figure></li>
+          <li><figure><img src="img/tenis-3.jpg" alt="Tela 3 da interface do projeto Passo Certo" width="1200" height="800" loading="lazy"><figcaption>Interface do Passo Certo – tela 3</figcaption></figure></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="secao" aria-labelledby="titulo-video">
+      <div class="container video-projeto">
+        <div class="cabecalho-secao"><h2 id="titulo-video">Vídeo do projeto</h2></div>
+        <video controls preload="metadata" poster="img/tenis-capa.jpg">
+          <source src="video/loja-tenis.mp4" type="video/mp4">
+          <p>Seu navegador não reproduz vídeo. <a href="video/loja-tenis.mp4">Baixe o vídeo do projeto</a>.</p>
+        </video>
+      </div>
+    </section>
+
+    <section class="secao secao-alt" aria-labelledby="titulo-cta">
+      <div class="container">
+        <div class="cta">
+          <h2 id="titulo-cta">Quer um projeto assim para o seu negócio?</h2>
+          <p>Conte o que você precisa e respondemos o mais rápido possível.</p>
+          <a class="btn" href="contato.html">Peça um orçamento</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container rodape-grade">
+      <div>
+        <p class="rodape-titulo rodape-marca"><img class="logo-img" src="img/logo-gravit.svg" alt="" width="40" height="40"> GraVit Tech</p>
+        <p>Sites, aplicativos e visibilidade online para o seu negócio.</p>
+      </div>
+      <nav aria-label="Rodapé">
+        <p class="rodape-titulo">Páginas</p>
+        <ul class="rodape-links" role="list">
+          <li><a href="index.html">Início</a></li>
+          <li><a href="servicos.html">Serviços</a></li>
+          <li><a href="projetos.html">Projetos</a></li>
+          <li><a href="sobre.html">Sobre</a></li>
+          <li><a href="contato.html">Contato</a></li>
+        </ul>
+      </nav>
+      <div>
+        <p class="rodape-titulo">Contato</p>
+        <p><a href="contato.html">Peça um orçamento</a></p>
+      </div>
+    </div>
+    <p class="container direitos">© 2026 GraVit Tech. Todos os direitos reservados.</p>
+  </footer>
+
+</body>
+</html>

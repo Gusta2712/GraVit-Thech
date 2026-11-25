@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contato | GraVit Tech – Peça seu Orçamento</title>
+  <meta name="description" content="Fale com a gente pelo WhatsApp, e-mail ou formulário e peça o orçamento do seu site, aplicativo ou trabalho de visibilidade online.">
+  <meta name="theme-color" content="#4338ca">
+  <meta property="og:title" content="Contato | GraVit Tech">
+  <meta property="og:description" content="Peça seu orçamento pelo WhatsApp, e-mail ou formulário.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="img/logo-gravit.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo principal</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="index.html">
+        <img class="logo-img" src="img/logo-gravit.svg" alt="" width="40" height="40">
+        GraVit Tech
+      </a>
+
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu-principal">
+        <span aria-hidden="true">☰</span> Menu
+      </button>
+
+      <nav aria-label="Principal">
+        <ul id="menu-principal" class="menu" role="list">
+          <li><a href="index.html">Início</a></li>
+          <li><a href="servicos.html">Serviços</a></li>
+          <li><a href="projetos.html">Projetos</a></li>
+          <li><a href="sobre.html">Sobre</a></li>
+          <li><a href="contato.html" aria-current="page">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo" tabindex="-1">
+
+    <section class="topo-pagina" aria-labelledby="titulo-pagina">
+      <div class="container">
+        <h1 id="titulo-pagina">Fale com a gente pelo WhatsApp 
+          ou entre em contato pelo E-mail</h1>
+        <p class="lead">Conte o que você precisa ou marque uma reunião conosco e 
+          responderemos o mais rápido possível.</p>
+        <p class="slogan">“Bases sólidas, resultados que elevam.”</p>
+      </div>
+    </section>
+
+    <section class="secao" aria-labelledby="titulo-formulario">
+      <div class="container duas-colunas">
+
+        <div>
+          <h2>Nos adicione ou mande-nos uma mensagem pelo E-mail</h2>
+          <ul class="contatos" role="list">
+            <li class="card contato-item">
+              <div>
+                <h3>WhatsApp</h3>
+                <p><a href="https://wa.me/5519989798331">Chamar no WhatsApp | Contato Gustavo</a></p>
+                <p><a href="https://wa.me/5519984226812">Chamar no WhatsApp | Contato Vitor</a></p>
+              </div>
+            </li>
+            <li class="card contato-item">
+              <div>
+                <h3>E-mail</h3>
+                <p><a href="mailto:gustavotoliveirabarros@gmail.com">gustavotoliveirabarros@gmail.com</a></p>
+                <p><a href="mailto:vitorg.prates181205@gmail.com">vitorg.prates181205@gmail.com</a></p>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="formulario">
+          <h2 id="titulo-formulario">Envie uma mensagem pronta direto para o nosso WhatsApp | Contato: Gustavo</h2>
+
+          <div id="resumo-erros" class="resumo-erros" tabindex="-1" hidden></div>
+
+          <p id="mensagem-sucesso" class="sucesso" tabindex="-1" role="status" hidden>
+            Tudo certo! Abrimos o WhatsApp com a sua mensagem pronta. É só tocar em enviar.
+          </p>
+          <form id="form-contato" data-whatsapp="5519989798331" novalidate>
+
+            <div class="campo">
+              <label for="nome">Nome <span class="obrig">(obrigatório)</span></label>
+              <input type="text" id="nome" name="nome" autocomplete="name" required aria-describedby="erro-nome">
+              <p class="erro" id="erro-nome"></p>
+            </div>
+
+            <div class="campo">
+              <label for="email">E-mail <span class="obrig">(obrigatório)</span></label>
+              <input type="email" id="email" name="email" autocomplete="email" required aria-describedby="erro-email">
+              <p class="erro" id="erro-email"></p>
+            </div>
+
+            <div class="campo">
+              <label for="servico">Serviço que pode te interessar</label>
+              <select id="servico" name="servico">
+                <option>Criação de site</option>
+                <option>Aplicativo</option>
+                <option>Visibilidade online e aumento no marketing</option>
+                <option>Ainda não sei, quero conversar</option>
+              </select>
+            </div>
+
+            <div class="campo">
+              <label for="mensagem">Mensagem <span class="obrig">(obrigatório)</span></label>
+              <textarea id="mensagem" name="mensagem" rows="5" required aria-describedby="erro-mensagem"></textarea>
+              <p class="erro" id="erro-mensagem"></p>
+            </div>
+
+            <button type="submit" class="btn">Enviar pelo WhatsApp</button>
+          </form>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container rodape-grade">
+      <div>
+        <p class="rodape-titulo rodape-marca"><img class="logo-img" src="img/logo-gravit.svg" alt="" width="40" height="40"> GraVit Tech</p>
+        <p>Sites, aplicativos e visibilidade online para o seu negócio.</p>
+      </div>
+      <nav aria-label="Rodapé">
+        <p class="rodape-titulo">Páginas</p>
+        <ul class="rodape-links" role="list">
+          <li><a href="index.html">Início</a></li>
+          <li><a href="servicos.html">Serviços</a></li>
+          <li><a href="projetos.html">Projetos</a></li>
+          <li><a href="sobre.html">Sobre</a></li>
+          <li><a href="contato.html">Contato</a></li>
+        </ul>
+      </nav>
+      <div>
+        <p class="rodape-titulo">Contato</p>
+        <p><a href="contato.html">Peça um orçamento</a></p>
+      </div>
+    </div>
+    <p class="container direitos">© 2026 GraVit Tech. Todos os direitos reservados.</p>
+  </footer>
+
+</body>
+</html>

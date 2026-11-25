@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FungAi | GraVit Tech – Projetos</title>
+  <meta name="description" content="Escreva aqui a frase de apresentação do FungAi.">
+  <meta name="theme-color" content="#4338ca">
+  <meta property="og:title" content="FungAi | GraVit Tech">
+  <meta property="og:description" content="Escreva aqui a frase de apresentação do FungAi.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="img/logo-gravit.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo principal</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="index.html">
+        <img class="logo-img" src="img/logo-gravit.svg" alt="" width="40" height="40">
+        GraVit Tech
+      </a>
+
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu-principal">
+        <span aria-hidden="true">☰</span> Menu
+      </button>
+
+      <nav aria-label="Principal">
+        <ul id="menu-principal" class="menu" role="list">
+          <li><a href="index.html">Início</a></li>
+          <li><a href="servicos.html">Serviços</a></li>
+          <li><a href="projetos.html" aria-current="true">Projetos</a></li>
+          <li><a href="sobre.html">Sobre</a></li>
+          <li><a href="contato.html">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo" tabindex="-1">
+
+    <section class="topo-pagina" aria-labelledby="titulo-pagina">
+      <div class="container">
+        <nav class="migalhas" aria-label="Você está em">
+          <ol>
+            <li><a href="projetos.html">Projetos</a></li>
+            <li aria-current="page">FungAi</li>
+          </ol>
+        </nav>
+        <span class="tag">PWA com IA</span>
+        <h1 id="titulo-pagina">FungAi (FungScan)</h1>
+        <p class="lead">O FungAi ou FungScan é uma inteligência artificial que detecta se há ou não 
+          doença em qualquer folha.</p>
+      </div>
+    </section>
+
+    <section class="secao" aria-labelledby="titulo-sobre">
+      <div class="container projeto-topo">
+        <div>
+          <h2 id="titulo-sobre">Sobre o projeto</h2>
+          <p>O FungAi foi elaborado e criado a partir de uma ideia de uma estudante do 
+            ensino médio da escola Hercy Moraes, que tinha que fazer um projeto de iniciação científica.
+          A ideia foi documentada em seu diário de bordo e apresentada na UNICAMP. Ela queria um Protótipo
+        funcional desse sistema IA, então me acionou para que eu pudesse colocar esse projeto em prática.</p>
+          <p>Esse projeto consiste em uma PWA mais básica por ser um protótipo, já que a estudante quer fazer 
+            algumas alterações em sua ideia. Por trás dessa PWA criada em HTML como o app Batidão, permite 
+            um banco de dados que treina a inteligência com mais de 50 fotos de folhas  com 
+            várias doenças e folhas saudáveis para que a IA possa assimilar com a foto nova adicionada
+            para a descoberta. Fotos essas que foram tiradas de sites científicos para melhor aproveitamento 
+            e assertividade.
+          </p>
+          <h3>Principais recursos</h3>
+          <ul class="lista-check" role="list">
+            <li>Recebe foto do próprio telefone ou tire na hora.</li>
+            <li>Treinável com fotos reais de artigos científicos.</li>
+            <li>Retorna um valor de 96% de assertividade.</li>
+          </ul>
+        </div>
+        <aside class="painel-link" aria-labelledby="titulo-teste">
+          <h2 id="titulo-teste">Especificação do projeto</h2>
+          <p>Abra o projeto no GitHub para ver sua tecnologia.</p>
+          <a class="btn" href="https://github.com/projetoestherFungiAI/FungAI/tree/main/js" target="_blank" rel="noopener">Abrir o FungAi no GitHub<span class="sr-only"> (abre em uma nova aba)</span></a>
+          <dl>
+            <dt>Tipo</dt><dd>PWA/Site (podendo ser utilizado como site ou instalável na área de trabalho do celular)</dd>
+            <dt>Tecnologias</dt><dd>HTML, CSS, JavaScript, IA Treinável, Banco de Dados</dd>
+          </dl>
+        </aside>
+      </div>
+    </section>
+
+    <section class="secao secao-alt" aria-labelledby="titulo-imagens">
+      <div class="container">
+        <div class="cabecalho-secao"><h2 id="titulo-imagens">Imagens da interface</h2></div>
+        <ul class="galeria" role="list">
+          <li><figure><img src="img/fungai-1.jpg" alt="Tela 1 da interface do projeto FungAi" width="1200" height="800" loading="lazy"><figcaption>Interface do FungAi – tela 1</figcaption></figure></li>
+          <li><figure><img src="img/fungai-2.jpg" alt="Tela 2 da interface do projeto FungAi" width="1200" height="800" loading="lazy"><figcaption>Interface do FungAi – tela 2</figcaption></figure></li>
+          <li><figure><img src="img/fungai-3.jpg" alt="Tela 3 da interface do projeto FungAi" width="1200" height="800" loading="lazy"><figcaption>Interface do FungAi – tela 3</figcaption></figure></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="secao" aria-labelledby="titulo-video">
+      <div class="container video-projeto">
+        <div class="cabecalho-secao"><h2 id="titulo-video">Vídeo do projeto</h2></div>
+        <video controls preload="metadata" poster="img/fungai-capa.jpg">
+          <source src="video/fungai.mp4" type="video/mp4">
+          <p>Seu navegador não reproduz vídeo. <a href="video/fungai.mp4">Baixe o vídeo do projeto</a>.</p>
+        </video>
+      </div>
+    </section>
+
+    <section class="secao secao-alt" aria-labelledby="titulo-cta">
+      <div class="container">
+        <div class="cta">
+          <h2 id="titulo-cta">Quer um projeto assim para o seu negócio?</h2>
+          <p>Conte o que você precisa e respondemos o mais rápido possível.</p>
+          <a class="btn" href="contato.html">Peça um orçamento</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container rodape-grade">
+      <div>
+        <p class="rodape-titulo rodape-marca"><img class="logo-img" src="img/logo-gravit.svg" alt="" width="40" height="40"> GraVit Tech</p>
+        <p>Sites, aplicativos e visibilidade online para o seu negócio.</p>
+      </div>
+      <nav aria-label="Rodapé">
+        <p class="rodape-titulo">Páginas</p>
+        <ul class="rodape-links" role="list">
+          <li><a href="index.html">Início</a></li>
+          <li><a href="servicos.html">Serviços</a></li>
+          <li><a href="projetos.html">Projetos</a></li>
+          <li><a href="sobre.html">Sobre</a></li>
+          <li><a href="contato.html">Contato</a></li>
+        </ul>
+      </nav>
+      <div>
+        <p class="rodape-titulo">Contato</p>
+        <p><a href="contato.html">Peça um orçamento</a></p>
+      </div>
+    </div>
+    <p class="container direitos">© 2026 GraVit Tech. Todos os direitos reservados.</p>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,1157 @@
+/* ==========================================================
+   STYLE.CSS – Portfólio da dupla
+   ========================================================== */
+
+/* ---------- Cores e medidas (modo claro) ---------- */
+:root {
+  --bg: #ffffff;
+  --surface: #f4f5fb;
+  --surface-2: #e9ebfa;
+  --text: #1b1f3b;
+  --muted: #4a5070;
+  --border: #d3d7ef;
+  --link: #4338ca;
+  --link-hover: #312e81;
+  --btn-bg: #4338ca;
+  --btn-bg-hover: #312e81;
+  --btn-text: #ffffff;
+  --erro: #b3261e;
+  --ok: #146c43;
+  --raio: 1rem;
+  --sombra: 0 8px 24px rgba(27, 31, 59, 0.08);
+  --largura: 72rem;
+}
+
+/* ---------- Modo escuro (automático, conforme o aparelho) ---------- */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0f1226;
+    --surface: #181c38;
+    --surface-2: #222750;
+    --text: #eef0ff;
+    --muted: #b9bedf;
+    --border: #333a6b;
+    --link: #a5b4fc;
+    --link-hover: #c7d2fe;
+    --btn-bg: #a5b4fc;
+    --btn-bg-hover: #c7d2fe;
+    --btn-text: #0f1226;
+    --erro: #ff8a80;
+    --ok: #7ddba0;
+    --sombra: 0 8px 24px rgba(0, 0, 0, 0.4);
+  }
+}
+
+/* ---------- Base ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  color: var(--text);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.2;
+  margin: 0 0 0.75em;
+  letter-spacing: -0.01em;
+}
+
+h1 {
+  font-size: clamp(2rem, 5vw + 0.5rem, 3.25rem);
+  font-weight: 800;
+}
+
+h2 {
+  font-size: clamp(1.5rem, 3vw + 0.5rem, 2.15rem);
+  font-weight: 800;
+}
+
+h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+p {
+  margin: 0 0 1rem;
+}
+
+a {
+  color: var(--link);
+  text-underline-offset: 0.2em;
+}
+
+a:hover {
+  color: var(--link-hover);
+}
+
+/* Foco visível: essencial para quem navega pelo teclado */
+:focus-visible {
+  outline: 3px solid var(--link);
+  outline-offset: 3px;
+}
+
+main:focus {
+  outline: none;
+}
+
+.container {
+  width: min(100% - 2rem, var(--largura));
+  margin-inline: auto;
+}
+
+/* ---------- Utilitários de acessibilidade ---------- */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -5rem;
+  z-index: 100;
+  background: var(--btn-bg);
+  color: var(--btn-text);
+  padding: 0.75rem 1.25rem;
+  border-radius: 0.6rem;
+  font-weight: 700;
+}
+
+.skip-link:focus {
+  top: 1rem;
+  color: var(--btn-text);
+}
+
+/* ---------- Cabeçalho e menu ---------- */
+.site-header {
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding-block: 1rem;
+}
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-weight: 800;
+  font-size: 1.25rem;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.logo:hover {
+  color: var(--text);
+}
+
+.logo-marca {
+  display: grid;
+  place-items: center;
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 0.7rem;
+  background: var(--btn-bg);
+  color: var(--btn-text);
+  font-size: 0.95rem;
+  font-weight: 800;
+}
+
+.menu {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu a {
+  display: inline-block;
+  padding: 0.6rem 0.95rem;
+  border-radius: 0.6rem;
+  color: var(--text);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.menu a:hover {
+  background: var(--surface-2);
+  color: var(--text);
+}
+
+.menu a[aria-current="page"],
+.menu a[aria-current="true"] {
+  background: var(--surface-2);
+  color: var(--link);
+  box-shadow: inset 0 -3px 0 var(--link);
+}
+
+.menu-toggle {
+  display: none;
+  align-items: center;
+  gap: 0.5rem;
+  min-height: 44px;
+  padding: 0.5rem 1rem;
+  font: inherit;
+  font-weight: 700;
+  color: var(--link);
+  background: transparent;
+  border: 2px solid var(--link);
+  border-radius: 0.7rem;
+  cursor: pointer;
+}
+
+/* ---------- Botões ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 48px;
+  padding: 0.8rem 1.6rem;
+  border: 2px solid var(--btn-bg);
+  border-radius: 999px;
+  background: var(--btn-bg);
+  color: var(--btn-text);
+  font-size: 1rem;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.btn:hover {
+  background: var(--btn-bg-hover);
+  border-color: var(--btn-bg-hover);
+  color: var(--btn-text);
+  transform: translateY(-2px);
+}
+
+.btn-contorno {
+  background: transparent;
+  color: var(--link);
+  border-color: var(--link);
+}
+
+.btn-contorno:hover {
+  background: var(--surface-2);
+  border-color: var(--link);
+  color: var(--link-hover);
+}
+
+/* ---------- Seções ---------- */
+.secao {
+  padding-block: clamp(2.5rem, 6vw, 4.5rem);
+}
+
+.secao-alt {
+  background: var(--surface);
+}
+
+.cabecalho-secao {
+  max-width: 40rem;
+  margin-bottom: 2rem;
+}
+
+.cabecalho-secao p {
+  color: var(--muted);
+  font-size: 1.1rem;
+}
+
+/* ---------- Hero (início) ---------- */
+.hero {
+  padding-block: clamp(3rem, 8vw, 6rem);
+  background:
+    radial-gradient(60rem 30rem at 85% -10%, var(--surface-2), transparent 60%),
+    radial-gradient(40rem 25rem at -10% 110%, var(--surface), transparent 60%),
+    var(--bg);
+}
+
+.hero h1 {
+  max-width: 46rem;
+}
+
+.destaque {
+  color: var(--link);
+}
+
+.etiqueta {
+  display: inline-block;
+  margin-bottom: 1rem;
+  padding: 0.35rem 0.9rem;
+  border-radius: 999px;
+  background: var(--surface-2);
+  color: var(--link);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.lead {
+  max-width: 40rem;
+  font-size: 1.2rem;
+  color: var(--muted);
+}
+
+.acoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1.75rem;
+}
+
+/* ---------- Topo das páginas internas ---------- */
+.topo-pagina {
+  padding-block: clamp(2.5rem, 6vw, 4rem);
+  background: linear-gradient(135deg, var(--surface), var(--bg));
+  border-bottom: 1px solid var(--border);
+}
+
+.topo-pagina h1 {
+  margin-bottom: 0.5rem;
+}
+
+.topo-pagina .lead {
+  margin-bottom: 0;
+}
+
+/* ---------- Cartões ---------- */
+.grade {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  gap: 1.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  padding: 1.75rem;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--raio);
+  box-shadow: var(--sombra);
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+.card p {
+  color: var(--muted);
+}
+
+.card .saiba-mais {
+  margin-top: auto;
+  font-weight: 700;
+}
+
+.icone {
+  display: grid;
+  place-items: center;
+  width: 3.25rem;
+  height: 3.25rem;
+  margin-bottom: 1rem;
+  border-radius: 0.9rem;
+  background: var(--surface-2);
+  font-size: 1.6rem;
+}
+
+/* ---------- Passos (Como trabalhamos) ---------- */
+.passos {
+  counter-reset: passo;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  gap: 1.25rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.passos li {
+  counter-increment: passo;
+  padding: 1.5rem;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--raio);
+}
+
+.passos li::before {
+  content: counter(passo);
+  display: grid;
+  place-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  margin-bottom: 0.75rem;
+  border-radius: 50%;
+  background: var(--btn-bg);
+  color: var(--btn-text);
+  font-weight: 800;
+}
+
+.passos p {
+  margin: 0;
+  color: var(--muted);
+}
+
+/* ---------- Faixa de chamada para contato ---------- */
+.cta {
+  padding: clamp(2rem, 5vw, 3.5rem);
+  border-radius: var(--raio);
+  background: var(--btn-bg);
+  color: var(--btn-text);
+  text-align: center;
+}
+
+.cta h2 {
+  margin-bottom: 0.5rem;
+}
+
+.cta p {
+  max-width: 36rem;
+  margin: 0 auto 1.5rem;
+}
+
+.cta .btn {
+  background: var(--btn-text);
+  border-color: var(--btn-text);
+  color: var(--btn-bg);
+}
+
+.cta .btn:hover {
+  background: var(--btn-text);
+  color: var(--btn-bg-hover);
+}
+
+.cta :focus-visible {
+  outline-color: var(--btn-text);
+}
+
+/* ---------- Página de serviços ---------- */
+.servico {
+  display: grid;
+  gap: 2rem;
+  align-items: start;
+}
+
+@media (min-width: 52rem) {
+  .servico {
+    grid-template-columns: 1.1fr 1fr;
+  }
+}
+
+.incluso {
+  padding: 1.5rem;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--raio);
+}
+
+.incluso h3 {
+  margin-top: 0;
+}
+
+.lista-check {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.lista-check li {
+  position: relative;
+  margin-bottom: 0.7rem;
+  padding-left: 2rem;
+}
+
+.lista-check li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 0.2rem;
+  display: grid;
+  place-items: center;
+  width: 1.4rem;
+  height: 1.4rem;
+  border-radius: 50%;
+  background: var(--btn-bg);
+  color: var(--btn-text);
+  font-size: 0.8rem;
+  font-weight: 800;
+}
+
+details {
+  margin-bottom: 0.75rem;
+  padding: 0 1.25rem;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 0.8rem;
+}
+
+summary {
+  padding: 1rem 0;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+details[open] summary {
+  margin-bottom: 1rem;
+  border-bottom: 1px solid var(--border);
+}
+
+details p {
+  color: var(--muted);
+}
+
+/* ---------- Página de portfólio ---------- */
+.projeto {
+  padding: 0;
+  overflow: hidden;
+}
+
+.miniatura {
+  display: grid;
+  place-items: center;
+  height: 11rem;
+  font-size: 3.5rem;
+}
+
+.tema-1 { background: linear-gradient(135deg, #4338ca, #0ea5e9); }
+.tema-2 { background: linear-gradient(135deg, #0f766e, #22c55e); }
+.tema-3 { background: linear-gradient(135deg, #be185d, #f97316); }
+
+.projeto-corpo {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 1.5rem;
+}
+
+.tag {
+  align-self: flex-start;
+  display: inline-block;
+  margin-bottom: 0.75rem;
+  padding: 0.2rem 0.75rem;
+  border-radius: 999px;
+  background: var(--surface-2);
+  color: var(--link);
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.card .resultado {
+  margin-top: auto;
+  margin-bottom: 0;
+  font-weight: 600;
+  color: var(--text);
+}
+
+/* ---------- Página sobre ---------- */
+.pessoa {
+  text-align: center;
+}
+
+.avatar {
+  display: grid;
+  place-items: center;
+  width: 6rem;
+  height: 6rem;
+  margin: 0 auto 1rem;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #4338ca, #0e7490);
+  color: #ffffff;
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+.pessoa .funcao {
+  color: var(--link);
+  font-weight: 700;
+}
+
+/* ---------- Página de contato ---------- */
+.duas-colunas {
+  display: grid;
+  gap: 2rem;
+}
+
+@media (min-width: 52rem) {
+  .duas-colunas {
+    grid-template-columns: 1fr 1.3fr;
+    align-items: start;
+  }
+}
+
+.contatos {
+  display: grid;
+  gap: 1rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.contato-item {
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+}
+
+.contato-item .icone {
+  flex-shrink: 0;
+  margin-bottom: 0;
+}
+
+.contato-item h3 {
+  margin-bottom: 0.15rem;
+}
+
+.contato-item p {
+  margin: 0;
+}
+
+.formulario {
+  padding: clamp(1.25rem, 4vw, 2rem);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--raio);
+  box-shadow: var(--sombra);
+}
+
+.campo {
+  margin-bottom: 1.25rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-weight: 700;
+}
+
+.obrig {
+  font-weight: 400;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 0.8rem 0.9rem;
+  font: inherit;
+  color: var(--text);
+  background: var(--bg);
+  border: 2px solid var(--muted);
+  border-radius: 0.7rem;
+}
+
+textarea {
+  resize: vertical;
+}
+
+input[aria-invalid="true"],
+textarea[aria-invalid="true"] {
+  border-color: var(--erro);
+}
+
+.erro {
+  margin: 0.4rem 0 0;
+  color: var(--erro);
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.erro:empty {
+  display: none;
+}
+
+.resumo-erros,
+.sucesso {
+  margin-bottom: 1.5rem;
+  padding: 1rem 1.25rem;
+  border-radius: 0.8rem;
+}
+
+.resumo-erros {
+  border: 2px solid var(--erro);
+}
+
+.resumo-erros ul {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+.resumo-titulo {
+  margin-bottom: 0.5rem;
+  color: var(--erro);
+  font-weight: 800;
+}
+
+.sucesso {
+  border: 2px solid var(--ok);
+  color: var(--ok);
+  font-weight: 700;
+}
+
+/* ---------- Rodapé ---------- */
+.site-footer {
+  padding-block: 2.5rem 1.5rem;
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+}
+
+.rodape-grade {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  gap: 1.5rem;
+}
+
+.rodape-titulo {
+  margin-bottom: 0.5rem;
+  font-weight: 800;
+  color: var(--text);
+}
+
+.rodape-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.rodape-links li {
+  margin-bottom: 0.4rem;
+}
+
+.direitos {
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+/* ---------- Celular: menu que abre e fecha ---------- */
+@media (max-width: 48rem) {
+  .site-header nav {
+    width: 100%;
+  }
+
+  .js .menu-toggle {
+    display: inline-flex;
+  }
+
+  .js .menu {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .js .menu.aberto {
+    display: flex;
+  }
+}
+
+/* ---------- Respeita quem desativa animações ---------- */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .card:hover,
+  .btn:hover {
+    transform: none;
+  }
+}
+
+/* ==========================================================
+   CARDS DE PROJETO (clicáveis) E JANELA DE DETALHES
+   ========================================================== */
+
+.card-projeto {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--raio);
+  box-shadow: var(--sombra);
+  transition: transform 0.2s;
+}
+
+.card-projeto:hover {
+  transform: translateY(-4px);
+}
+
+/* Mostra o contorno no card inteiro quando o botão recebe foco pelo teclado */
+.card-projeto:has(.card-botao:focus-visible) {
+  outline: 3px solid var(--link);
+  outline-offset: 3px;
+}
+
+.card-projeto h3 {
+  margin: 0;
+  padding: 1.25rem 1.25rem 0.9rem;
+}
+
+/* O botão do título "estica" para cobrir o card todo */
+.card-botao {
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  color: inherit;
+  text-align: left;
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+
+.card-botao::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+
+.card-botao:focus-visible {
+  outline: none;
+}
+
+.card-projeto img {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+}
+
+.ver-mais {
+  display: block;
+  padding: 0.9rem 1.25rem 1.25rem;
+  font-weight: 700;
+  color: var(--link);
+}
+
+/* ---------- Janela (modal) ---------- */
+.modal {
+  width: min(100% - 2rem, 48rem);
+  max-height: calc(100vh - 2rem);
+  padding: 0;
+  color: var(--text);
+  background: var(--bg);
+  border: 0;
+  border-radius: var(--raio);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+}
+
+.modal::backdrop {
+  background: rgba(15, 18, 38, 0.75);
+}
+
+.modal-corpo {
+  padding: clamp(1.25rem, 4vw, 2rem);
+}
+
+.modal-fechar {
+  display: flex;
+  width: fit-content;
+  margin: 0 0 1rem auto;
+}
+
+.modal h3 {
+  margin-top: 1.75rem;
+}
+
+.galeria {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  gap: 1rem;
+  margin: 0 0 1rem;
+  padding: 0;
+  list-style: none;
+}
+
+.galeria img {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  border: 1px solid var(--border);
+  border-radius: 0.7rem;
+}
+
+/* Impede a página de rolar atrás da janela aberta */
+body.modal-aberto {
+  overflow: hidden;
+}
+
+/* Foto redonda para a página "Sobre" (usada na parte de imagens) */
+.foto-pessoa {
+  width: 8rem;
+  height: 8rem;
+  margin: 0 auto 1rem;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+/* ==========================================================
+   CARDS NO ESTILO DO SITE DE LOUVORES
+   (brilho, elevação e entrada suave ao rolar)
+   ========================================================== */
+:root { --brilho: rgba(67, 56, 202, 0.16); }
+
+@media (prefers-color-scheme: dark) {
+  :root { --brilho: rgba(165, 180, 252, 0.28); }
+}
+
+.card,
+.card-projeto {
+  position: relative;
+  overflow: hidden;
+  transition:
+    opacity 0.7s ease var(--atraso, 0s),
+    translate 0.7s ease var(--atraso, 0s),
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    border-color 0.35s ease;
+}
+
+/* Faixa de luz que atravessa o card */
+.card::before,
+.card-projeto::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -120%;
+  z-index: 2;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, var(--brilho), transparent);
+  transform: skewX(-20deg);
+  transition: left 0.7s ease;
+  pointer-events: none;
+}
+
+.card:hover::before,
+.card-projeto:hover::before {
+  left: 140%;
+}
+
+.card:hover,
+.card-projeto:hover {
+  transform: translateY(-8px) scale(1.02);
+  border-color: var(--link);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.2), 0 0 22px var(--brilho);
+}
+
+/* Entrada suave (só ativa quando o JavaScript está funcionando) */
+.js .reveal { opacity: 0; translate: 0 36px; }
+.js .reveal.show { opacity: 1; translate: 0 0; }
+
+/* Estrutura do card de projeto: imagem em cima, texto embaixo */
+.card-projeto img {
+  transition: transform 0.5s ease;
+}
+
+.card-projeto:hover img {
+  transform: scale(1.06);
+}
+
+.card-projeto .card-corpo {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 1.25rem 1.5rem 1.5rem;
+}
+
+.card-projeto .card-corpo h3 {
+  margin: 0 0 0.5rem;
+  padding: 0;
+}
+
+.card-projeto .card-corpo p {
+  margin: 0 0 1.1rem;
+  color: var(--muted);
+}
+
+.card-projeto .btn {
+  width: 100%;
+  margin-top: auto;
+}
+
+/* O botão "Ver detalhes" cobre o card inteiro (clicar em qualquer ponto abre) */
+.card-link::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+
+.card-link:hover {
+  transform: none;
+}
+
+.card-link:focus-visible {
+  outline: none;
+}
+
+.card-projeto:has(.card-link:focus-visible) {
+  outline: 3px solid var(--link);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card:hover,
+  .card-projeto:hover { transform: none; }
+  .card::before,
+  .card-projeto::before { display: none; }
+  .js .reveal { opacity: 1; translate: none; }
+}
+
+/* ==========================================================
+   PÁGINAS DE PROJETO (detalhes, galeria e vídeo)
+   ========================================================== */
+.migalhas ol {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0 0 1rem;
+  padding: 0;
+  list-style: none;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.migalhas li + li::before {
+  content: "›";
+  margin-right: 0.5rem;
+}
+
+.topo-pagina .tag {
+  margin-bottom: 0.75rem;
+}
+
+.projeto-topo {
+  display: grid;
+  gap: 2rem;
+  align-items: start;
+}
+
+@media (min-width: 52rem) {
+  .projeto-topo { grid-template-columns: 1.5fr 1fr; }
+  .painel-link { position: sticky; top: 1.5rem; }
+}
+
+.painel-link {
+  padding: 1.5rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--raio);
+}
+
+.painel-link h2 { font-size: 1.4rem; }
+.painel-link dl { margin: 1.25rem 0 0; }
+.painel-link dt { font-weight: 700; }
+.painel-link dd { margin: 0 0 0.75rem; color: var(--muted); }
+
+.galeria figure { margin: 0; }
+
+.galeria figcaption {
+  margin-top: 0.4rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.video-projeto video {
+  display: block;
+  width: 100%;
+  max-height: 75vh;
+  background: #000;
+  border-radius: var(--raio);
+}
+
+/* ==========================================================
+   LOGO, SLOGANS E DESTAQUE DA GRAVIT TECH
+   ========================================================== */
+.logo-img {
+  width: 2.4rem;
+  height: 2.4rem;
+  flex-shrink: 0;
+  border-radius: 0.7rem;
+}
+
+.rodape-marca {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.slogan {
+  max-width: 40rem;
+  margin: 1.25rem 0 0;
+  padding-left: 0.9rem;
+  border-left: 4px solid var(--link);
+  color: var(--link);
+  font-size: 1.15rem;
+  font-style: italic;
+  font-weight: 700;
+}
+
+.hero-grade {
+  display: grid;
+  gap: 2rem;
+  align-items: center;
+}
+
+@media (min-width: 56rem) {
+  .hero-grade { grid-template-columns: 1.2fr 1fr; }
+}
+
+.hero-logo {
+  width: 100%;
+  height: auto;
+  border-radius: var(--raio);
+  box-shadow: var(--sombra);
+}

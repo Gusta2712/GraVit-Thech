@@ -1,0 +1,16 @@
+# PassoCerto — catálogo demonstrativo de tênis
+
+## Como abrir
+1. Extraia o ZIP.
+2. Abra a pasta `tenis_em_oferta`.
+3. Clique duas vezes em `index.html` ou abra a pasta pelo VS Code e use Live Server.
+
+## Arquivos
+- `index.html`: estrutura do site.
+- `style.css`: aparência e responsividade.
+- `script.js`: catálogo, busca, filtros, ordenação e modal de detalhes.
+
+## Antes de publicar
+Os produtos, preços, imagens e especificações são demonstrativos. Atualize os dados no array `products` em `script.js`.
+O campo `store` atualmente leva à loja oficial da marca, não necessariamente à página exata do produto. Para cumprir o fluxo final desejado, substitua cada URL por um link direto e verificado do produto no vendedor.
+Os preços não são atualizados automaticamente. Para preços reais e atualizados, será necessário integrar uma API/feed de produtos ou manter o catálogo atualizado manualmente. Não prometa menor preço sem comparar fontes e registrar quando o preço foi verificado.
